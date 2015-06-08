@@ -1,2 +1,30 @@
-<h1>Responses#index</h1>
-<p>Find me in app/views/responses/index.html.erb</p>
+<h1>Listing Responses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Respondent ID</th>
+      <th>State</th>
+      <th>Year of birth</th>
+      <th>Race</th>
+      <th>Gender</th>
+      <th>Voter Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @responses.each do |response| %>
+      <tr>
+        <td><%= response.respondent_id %></td>
+        <td><%= response.state %></td>
+        <td><%= response.date_of_birth %></td>
+        <td><%= response.race %></td>
+        <td><%= response.gender %></td>
+        <td><%= response.voter_status %></td>
+        <td><%= link_to 'Show', response %></td>
+        <td><%= link_to 'Edit', edit_survey_path(response) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,27 +1,12 @@
 Rails.application.routes.draw do
-  get 'responses/index'
 
-  get 'responses/new'
+  resources :surveys
+  root to: 'surveys#index'
 
-  get 'responses/show'
-
-  get 'responses/edit'
-
-  get 'questions/index'
-
-  get 'questions/new'
-
-  get 'questions/show'
-
-  get 'questions/edit'
-
-  get 'surveys/index'
-
-  get 'surveys/new'
-
-  get 'surveys/show'
-
-  get 'surveys/edit'
+  resources :questions
+  resources :responses do
+    collection { post :import}
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,8 @@
+<fieldset>
+  <%= f.label :question_code, "Question" %><br />
+  <%= f.text_field :question_code %><br />
+  <%= f.label :inquiry, "Description" %><br />
+  <%= f.text_area :inquiry %><br />
+  <%= link_to "add", '#', class: "add_fields" %>
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</fieldset>

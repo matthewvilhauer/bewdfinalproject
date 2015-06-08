@@ -1,2 +1,12 @@
-<h1>Surveys#show</h1>
-<p>Find me in app/views/surveys/show.html.erb</p>
+<h1><%= @survey.title %></h1>
+
+<ol class="questions">
+<% @survey.questions.each do |question| %>
+  <li>
+    <%= question.quesiton_code %>|<%= question.inquiry %>
+  </li>
+<% end %>
+</ol>
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back to Surveys', surveys_path %>
