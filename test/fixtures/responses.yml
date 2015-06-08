@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  state: MyString
+  date_of_birth: MyString
+  race: MyString
+  gender: MyString
+  voter_status: MyString
+
+two:
+  state: MyString
+  date_of_birth: MyString
+  race: MyString
+  gender: MyString
+  voter_status: MyString
