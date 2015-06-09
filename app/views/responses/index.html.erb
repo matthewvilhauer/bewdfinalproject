@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Survey ID</th>
       <th>Respondent ID</th>
       <th>State</th>
       <th>Year of birth</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @responses.each do |response| %>
       <tr>
+        <td><%= response.survey_id %></td>      
         <td><%= response.respondent_id %></td>
         <td><%= response.state %></td>
         <td><%= response.date_of_birth %></td>
@@ -23,8 +25,21 @@
         <td><%= response.gender %></td>
         <td><%= response.voter_status %></td>
         <td><%= link_to 'Show', response %></td>
-        <td><%= link_to 'Edit', edit_survey_path(response) %></td>
+        <td><%= link_to 'Edit', edit_response_path(response) %></td>
+        <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<p><%= link_to 'New Response', new_response_path %></p>
+
+<br>
+
+<h3>Import Survey Responses</h3>
+<%= form_tag import_responses_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

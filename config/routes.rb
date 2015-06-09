@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+  root "home#index"
+
   resources :surveys
-  root to: 'surveys#index'
 
   resources :questions
+  resources :answers
   resources :responses do
     collection { post :import}
   end

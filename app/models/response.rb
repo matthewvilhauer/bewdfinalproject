@@ -1,6 +1,8 @@
 class Response < ActiveRecord::Base
   belongs_to :survey
-  has_and_belongs_to_many :questions
+  has_many :answer_responses
+
+  accepts_nested_attributes_for :answer_responses, allow_destroy: true
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|

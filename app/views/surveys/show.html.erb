@@ -3,10 +3,18 @@
 <ol class="questions">
 <% @survey.questions.each do |question| %>
   <li>
-    <%= question.quesiton_code %>|<%= question.inquiry %>
+    <%= question.question_code %><%= question.inquiry %>
+    <ol class="answers">
+      <% question.answers.each do |answer| %>
+        <li><%= answer.content %></li>
+      <% end %>
+    </ol>
   </li>
 <% end %>
 </ol>
 
+
+
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %> |
 <%= link_to 'Back to Surveys', surveys_path %>

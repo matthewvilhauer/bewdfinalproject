@@ -1,2 +1,37 @@
-<h1>Responses#show</h1>
-<p>Find me in app/views/responses/show.html.erb</p>
+<p>
+  <strong>Survey ID:</strong>
+  <%= @response.survey_id %>
+</p>
+
+<p>
+  <strong>Respondent ID:</strong>
+  <%= @response.respondent_id %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @response.state %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @response.date_of_birth %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @response.race %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @response.gender %>
+</p>
+
+<p>
+  <strong>Voter Status:</strong>
+  <%= @response.voter_status %>
+</p>
+
+<%= link_to 'Edit', edit_response_path(@response) %> |
+<%= link_to 'Back', surveys_path %>

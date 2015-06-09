@@ -9,7 +9,10 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
-    @survey.questions.new
+    3.times do
+      question = @survey.questions.build
+      4.times { question.answers.build }
+    end
 
   end
 
@@ -17,7 +20,7 @@ class SurveysController < ApplicationController
     @survey = Survey.new(survey_params)
 
     if @survey.save
-      redirect_to @survey
+      redirect_to @survey, notice: "Successfully created survey."
     else
       render :new
     end
@@ -29,7 +32,7 @@ class SurveysController < ApplicationController
 
   def update
     @survey = Survey.find(params[:id])
-    if @survey.update_attributes(params[:survey])
+    if @survey.update_attributes(survey_params)
       redirect_to @survey, notice: "Successfully updated survey."
     else
       render :edit
@@ -45,7 +48,7 @@ class SurveysController < ApplicationController
   private
 
   def survey_params
-    params.require(:survey).permit(:title, :date_published, question_attributes: [:question_code, :inquiry])
+    params.require(:survey).permit(:title, :date_published, question_attributes: [:question_code, :inquiry, :_destroy])
   end
 
 end

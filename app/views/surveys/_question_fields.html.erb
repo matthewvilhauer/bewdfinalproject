@@ -1,8 +1,15 @@
-<fieldset>
-  <%= f.label :question_code, "Question" %><br />
+<div class="fields">
+  <%= f.label :question_code, "Question Code" %><br />
   <%= f.text_field :question_code %><br />
   <%= f.label :inquiry, "Description" %><br />
   <%= f.text_area :inquiry %><br />
-  <%= link_to "add", '#', class: "add_fields" %>
-  <%= link_to "remove", '#', class: "remove_fields" %>
-</fieldset>
+  <%= f.check_box :_destroy %>
+  <%= f.label :_destroy, "Remove Question" %>
+
+  
+  <%= f.fields_for :answers do |builder| %>
+    <%= render 'answer_fields', f: builder %>
+  <% end %>
+  <%= raw link_to_remove_fields("remove", f) %>
+  <p><%= raw link_to_add_fields("Add Answer", f, :answers) %></p>
+</div>
