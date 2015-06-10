@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+.content {
+  margin-left: 20px;
+  margin-top: 60px;
+  margin-right: 20px;
+}
+
+.answers {
+  margin-left: 40px;
+}
+
+.response_table_header {
+  padding-right: 5px;
+
+}
+
+.response_table_data {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.response_table_link {
+  padding-right: 5px;
+  padding-left: 5px;
+}

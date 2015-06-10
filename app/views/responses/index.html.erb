@@ -3,13 +3,13 @@
 <table>
   <thead>
     <tr>
-      <th>Survey ID</th>
-      <th>Respondent ID</th>
-      <th>State</th>
-      <th>Year of birth</th>
-      <th>Race</th>
-      <th>Gender</th>
-      <th>Voter Status</th>
+      <th class="response_table_header">Survey ID</th>
+      <th class="response_table_header">Respondent ID</th>
+      <th class="response_table_header">State</th>
+      <th class="response_table_header">Year of birth</th>
+      <th class="response_table_header">Race</th>
+      <th class="response_table_header">Gender</th>
+      <th class="response_table_header">Voter Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,16 +17,16 @@
   <tbody>
     <% @responses.each do |response| %>
       <tr>
-        <td><%= response.survey_id %></td>      
-        <td><%= response.respondent_id %></td>
-        <td><%= response.state %></td>
-        <td><%= response.date_of_birth %></td>
-        <td><%= response.race %></td>
-        <td><%= response.gender %></td>
-        <td><%= response.voter_status %></td>
-        <td><%= link_to 'Show', response %></td>
-        <td><%= link_to 'Edit', edit_response_path(response) %></td>
-        <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="response_table_data"><%= response.survey_id %></td>      
+        <td class="response_table_data"><%= response.respondent_id %></td>
+        <td class="response_table_data"><%= response.state %></td>
+        <td class="response_table_data"><%= response.date_of_birth %></td>
+        <td class="response_table_data"><%= response.race %></td>
+        <td class="response_table_data"><%= response.gender %></td>
+        <td class="response_table_data"><%= response.voter_status %></td>
+        <td class="response_table_link"><%= link_to 'Show', response %></td>
+        <td class="response_table_link"><%= link_to 'Edit', edit_response_path(response) %></td>
+        <td class="response_table_link"><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

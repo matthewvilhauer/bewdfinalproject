@@ -9,7 +9,7 @@
 
     <ol class="answers">
       <% question.answers.each do |answer| %>
-        <li><%= answer.id %>|<%= answer.content %></li>
+        <li><%= answer.content %></li>
       <% end %>
     </ol>
   </li>
@@ -17,7 +17,7 @@
 </ol>
 
 
-
+<br>
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %> |
 <%= link_to 'Back to Surveys', surveys_path %>
