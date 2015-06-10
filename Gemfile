@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 gem "nested_form"
-
+gem 'devise'
 
 gem 'rails', '4.2.1'
 
