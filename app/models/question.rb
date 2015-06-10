@@ -1,4 +1,6 @@
 class Question < ActiveRecord::Base
+  validates :inquiry, presence: true
+
   belongs_to :survey
   has_many :answers
 

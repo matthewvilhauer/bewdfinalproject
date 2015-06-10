@@ -12,12 +12,6 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <%= link_to 'MySurveyApp', root_path, class: 'navbar-brand' %>
-        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#navbar-links">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
       </div>
       <div class="collapse navbar-collapse" id="navbar-links">
         <ul class="nav navbar-nav">
@@ -31,9 +25,17 @@
     </div>
   </nav>
 
-<div class="content">
-  <%= yield %>
-</div>
+  <div class="content">
+    <%= yield %>
+  </div>
+  <footer class="footer">
+    <div class="container">
+
+      <p class="footer_text"><a href="/home/about" class="footer_text">About This App</a> &nbsp/&nbsp  Designed by Matthew Vilhauer</p>
+
+    </div>
+  </footer>
 
 </body>
+
 </html>

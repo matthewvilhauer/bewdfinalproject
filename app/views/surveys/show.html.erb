@@ -1,19 +1,16 @@
 <h1><%= @survey.title %></h1>
 
-<h3>Survey ID: <%= @survey.id %></h3>
+<h4>Survey ID: <%= @survey.id %></h4>
 
 <ol class="questions">
-<% @survey.questions.each do |question| %>
-  <li>
-    <li>Question ID: <%= question.id %>  ||  <%= question.inquiry %></li>
-
+  <% @survey.questions.each do |question| %>
+    <li><%= question.inquiry %></li>
     <ol class="answers">
       <% question.answers.each do |answer| %>
         <li><%= answer.content %></li>
       <% end %>
     </ol>
-  </li>
-<% end %>
+  <% end %>
 </ol>
 
 
@@ -21,3 +18,41 @@
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %> |
 <%= link_to 'Back to Surveys', surveys_path %>
+<br>
+<hr>
+
+<h4>Import Survey Responses</h4>
+<%= form_tag import_responses_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <br>
+  <%= submit_tag "Import" %>
+<% end %>
+
+<br>
+<h3>Survey Responses:</h3>
+
+<table class="responses">
+  <tr>
+    <th class="response_table_header">Respondent ID</th>
+    <th class="response_table_header">State</th>
+    <th class="response_table_header">Date of Birth</th>
+    <th class="response_table_header">Race</th>
+    <th class="response_table_header">Gender</th>
+    <th class="response_table_header">Voter Status</th>
+
+  </tr>
+
+  <% @survey.responses.each do |response| %>
+    <tr>
+      <td class="response_table_data"><%= response.id %></td>
+      <td class="response_table_data"><%= response.state %></td>
+      <td class="response_table_data"><%= response.date_of_birth %></td>
+      <td class="response_table_data"><%= response.race %></td>
+      <td class="response_table_data"><%= response.gender %></td>
+      <td class="response_table_data"><%= response.voter_status %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<br>
+<br>

@@ -14,6 +14,13 @@
  *= require_self
  */
 
+.navbar {
+  background-color: #f5f5f5;
+  letter-spacing: .5px;
+  text-shadow: .25px .25px 0px #000;
+}
+
+
 .content {
   margin-left: 20px;
   margin-top: 60px;
@@ -26,6 +33,7 @@
 
 .response_table_header {
   padding-right: 5px;
+  padding-left: 5px;
 
 }
 
@@ -43,4 +51,28 @@
 .background {
     max-width: 100%;
     height: auto;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #f5f5f5;
+}
+
+.footer_text {
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: .5px;
+  color: #5cb85c;;
+  text-shadow: .25px .25px 0px #000;
+
+}
+a.footer_text {
+  text-align: center;
+  margin-top: 10px;
+  color: #5cb85c;;
+  text-shadow: .25px .25px 0px #000;
+
 }

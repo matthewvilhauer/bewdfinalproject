@@ -1,7 +1,8 @@
-<h1>Questions Index</h1>
+<h1><%= link_to "Questions Index", questions_path %></h1>
 
+<p>Search for a question:</p>
 <div class="search">
-  <%= form_tag "/", method: "GET" do %>
+  <%= form_tag "/questions/", method: "GET" do %>
     <%= text_field_tag :q %>
     <%= submit_tag "Search" %>
   <% end %>
@@ -21,3 +22,6 @@
   <% end %>
   </ol>
 </div>
+<br>
+<br>
+<br>
