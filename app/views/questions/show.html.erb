@@ -1,2 +1,19 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<h1>Question <%= @question.id %></h1>
+
+<div class="article">
+  <ol class="questions">
+    <li>
+      <li>Survey ID: <%= @question.survey_id %> || Question ID: <%= @question.id %>  ||  <%= @question.inquiry %></li>
+      <ol class="answers">
+        <% @question.answers.each do |answer| %>
+          <li><%= answer.content %> || ID: <%= answer.id %></li>
+        <% end %>
+      </ol>
+    </li>
+  </ol>
+</div>
+
+<br>
+<%= link_to 'Edit Question', edit_question_path %> |
+<%= link_to "Delete", @question, :confirm => 'Are you sure?', :method => :delete %> |
+<%= link_to 'Back to Questions', questions_path %>

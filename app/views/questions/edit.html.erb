@@ -1,2 +1,9 @@
-<h1>Questions#edit</h1>
-<p>Find me in app/views/questions/edit.html.erb</p>
+<h1>Editing Question <%= @question.id %></h1>
+
+<%= render "form" %>
+
+<br>
+<p>
+  <%= link_to "Back", @question %> |
+  <%= link_to "View All", questions_path %>
+</p>

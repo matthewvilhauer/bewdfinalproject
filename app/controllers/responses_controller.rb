@@ -29,7 +29,7 @@ class ResponsesController < ApplicationController
   def destroy
     @response = Response.find(params[:id])
     @response.destroy
-    redirect_to responses_url, notice: "Successfully destroyed survey."
+    redirect_to responses_url, notice: "Successfully destroyed response."
   end
 
   def import

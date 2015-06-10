@@ -1,6 +1,8 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @questions = Question.all
+    @questions = Question.search_for(params[:q])
   end
 
   def new
@@ -22,6 +24,15 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question.update_attributes(question_params)
+      redirect_to @question, notice: "Successfully updated question."
+    else
+      render :edit
+    end
   end
 
   def destroy

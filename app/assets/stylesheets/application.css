@@ -38,3 +38,9 @@
   padding-right: 5px;
   padding-left: 5px;
 }
+
+
+.background {
+    max-width: 100%;
+    height: auto;
+}
