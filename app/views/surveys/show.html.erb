@@ -1,12 +1,15 @@
 <h1><%= @survey.title %></h1>
 
+<h3>Survey ID: <%= @survey.id %></h3>
+
 <ol class="questions">
 <% @survey.questions.each do |question| %>
   <li>
-    <%= question.question_code %><%= question.inquiry %>
+    <li>Question ID: <%= question.id %>  ||  <%= question.inquiry %></li>
+
     <ol class="answers">
       <% question.answers.each do |answer| %>
-        <li><%= answer.content %></li>
+        <li><%= answer.id %>|<%= answer.content %></li>
       <% end %>
     </ol>
   </li>

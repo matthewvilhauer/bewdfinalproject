@@ -1,4 +1,5 @@
 class AnswerResponse < ActiveRecord::Base
   belongs_to :answers
-  belongs_to :responses
+  belongs_to :questions
+  belongs_to :survey
 end
