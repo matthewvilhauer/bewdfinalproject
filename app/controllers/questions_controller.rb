@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @questions = Question.search_for(params[:q])
+    @questions = Question.search_for_survey(params[:q])
   end
 
   def new
